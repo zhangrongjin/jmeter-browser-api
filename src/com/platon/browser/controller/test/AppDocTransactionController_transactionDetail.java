@@ -12,13 +12,12 @@ import org.apache.jmeter.samplers.SampleResult;
 import com.alibaba.fastjson.JSONObject;
 import com.platon.browser.util.SampleResultUtil;
 
-public class AppDocTransactionController_transactionList extends AbstractJavaSamplerClient {
+public class AppDocTransactionController_transactionDetail extends AbstractJavaSamplerClient {
 
 	public Arguments getDefaultParameters() {
 		Arguments params = new Arguments();
-		params.addArgument("url", "http://192.168.16.173:9061/browser-server/transaction/transactionList");
-		params.addArgument("body.pageNo", "1");
-		params.addArgument("body.pageSize", "10");
+		params.addArgument("url", "http://192.168.16.173:9061/browser-server/transaction/transactionDetails");
+		params.addArgument("body.txHash", "0x52a8b6fd6fced34b89bf2e8b12fa3b3b3ec921545b3b7615c4c41f740cf2a417");
 		return params;
 	}
 	
@@ -45,11 +44,10 @@ public class AppDocTransactionController_transactionList extends AbstractJavaSam
 	
 	public static void main(String[] args) {
 		Arguments params = new Arguments();
-		params.addArgument("url", "http://192.168.16.173:9061/browser-server/transaction/transactionList");
-		params.addArgument("body.pageNo", "1");
-		params.addArgument("body.pageSize", "10");
+		params.addArgument("url", "http://192.168.16.173:9061/browser-server/transaction/transactionDetails");
+		params.addArgument("body.txHash", "0x52a8b6fd6fced34b89bf2e8b12fa3b3b3ec921545b3b7615c4c41f740cf2a417");
 		JavaSamplerContext arg0 = new JavaSamplerContext(params);
-		AppDocTransactionController_transactionList test = new AppDocTransactionController_transactionList();
+		AppDocTransactionController_transactionDetail test = new AppDocTransactionController_transactionDetail();
 		test.setupTest(arg0);
 		SampleResult sampleResult = test.runTest(arg0);
 		System.out.println("result:"+sampleResult.getResponseDataAsString());

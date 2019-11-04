@@ -12,13 +12,12 @@ import org.apache.jmeter.samplers.SampleResult;
 import com.alibaba.fastjson.JSONObject;
 import com.platon.browser.util.SampleResultUtil;
 
-public class AppDocTransactionController_transactionList extends AbstractJavaSamplerClient {
+public class AppDocStakingController_stakingDetails extends AbstractJavaSamplerClient {
 
 	public Arguments getDefaultParameters() {
 		Arguments params = new Arguments();
-		params.addArgument("url", "http://192.168.16.173:9061/browser-server/transaction/transactionList");
-		params.addArgument("body.pageNo", "1");
-		params.addArgument("body.pageSize", "10");
+		params.addArgument("url", "http://192.168.16.173:9061/browser-server/staking/stakingDetails");
+		params.addArgument("body.nodeId", "1");
 		return params;
 	}
 	
@@ -41,18 +40,6 @@ public class AppDocTransactionController_transactionList extends AbstractJavaSam
 		sr = SampleResultUtil.post(sr, url, requestBody);
 		sr.sampleEnd();
 		return sr;
-	}
-	
-	public static void main(String[] args) {
-		Arguments params = new Arguments();
-		params.addArgument("url", "http://192.168.16.173:9061/browser-server/transaction/transactionList");
-		params.addArgument("body.pageNo", "1");
-		params.addArgument("body.pageSize", "10");
-		JavaSamplerContext arg0 = new JavaSamplerContext(params);
-		AppDocTransactionController_transactionList test = new AppDocTransactionController_transactionList();
-		test.setupTest(arg0);
-		SampleResult sampleResult = test.runTest(arg0);
-		System.out.println("result:"+sampleResult.getResponseDataAsString());
 	}
 	
 }

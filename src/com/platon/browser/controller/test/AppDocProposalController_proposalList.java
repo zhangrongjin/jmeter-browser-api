@@ -39,4 +39,16 @@ public class AppDocProposalController_proposalList extends AbstractJavaSamplerCl
 		return sr;
 	}
 
+	public static void main(String[] args) {
+		Arguments params = new Arguments();
+		params.addArgument("url", "http://192.168.16.173:9061/browser-server/proposal/proposalList");
+		params.addArgument("body.pageNo", "1");
+		params.addArgument("body.pageSize", "10");
+		JavaSamplerContext arg0 = new JavaSamplerContext(params);
+		AppDocProposalController_proposalList test = new AppDocProposalController_proposalList();
+		test.setupTest(arg0);
+		SampleResult sampleResult = test.runTest(arg0);
+		System.out.println("result:"+sampleResult.getResponseDataAsString());
+	}
+	
 }
